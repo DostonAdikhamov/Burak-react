@@ -1,32 +1,20 @@
 import React from "react";
 import "../css/app.css";
 import { Box, Button, Container, Stack, Typography } from "@mui/material";
-import { Route, Link, Switch } from "react-router-dom";
+import { Route, Link, Switch, useLocation } from "react-router-dom";
 import { UserPage } from "./screens/userPage/index";
-import { Home } from "./screens/homePage";
+import { Home } from "./screens/homePage/index";
 import { ProductsPage } from "./screens/productsPage";
 import { OrdersPage } from "./screens/ordersPage";
+import { HomeNavbar } from "./components/headers/HeaderNavbar";
+import { OtherNavbar } from "./components/headers/OtherNavbar";
+import { Footer } from "./components/footer";
 
 function App() {
+  const location = useLocation();
   return (
-    <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">HomePage</Link>
-            </li>
-            <li>
-              <Link to="/products">ProductsPage</Link>
-            </li>
-            <li>
-              <Link to="/orders">OrdersPage</Link>
-            </li>
-            <li>
-              <Link to="/member-page">UserPage</Link>
-            </li>
-          </ul>
-        </nav>
-
+    <>
+      {location.pathname === "/" ? <HomeNavbar /> : <OtherNavbar />}
         <Switch>
           <Route path="/products">
             <ProductsPage />
@@ -41,7 +29,8 @@ function App() {
             <Home />
           </Route>
         </Switch>
-      </div>
+        <Footer />
+      </>
   )
 }
 
