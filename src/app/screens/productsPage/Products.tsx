@@ -19,12 +19,12 @@ export default function Products() {
   return (
     <div className="products">
       <Container>
-        <Stack className="title-container">
+        <Stack className="container-title">
           <Typography className="products-title">Burak Restaurant</Typography>
-          <Box className="search-container">
+          <Box className="search-box">
             <input
               type="text"
-              placeholder="Type here"
+              placeholder="Type here for search"
               className="products-search-box"
             />
             <Button
@@ -32,7 +32,8 @@ export default function Products() {
               color="primary"
               className="search-button"
             >
-              SEARCH <SearchIcon />
+              Search 
+              <SearchIcon />
             </Button>
           </Box>
         </Stack>
@@ -55,7 +56,7 @@ export default function Products() {
         </Stack>
 
         <Stack className="products-page-wrapper">
-          <Stack className="category-tabs" direction="column">
+          <Stack className="menu-category" direction="column">
             <Button variant="contained" color="primary">
               DISH
             </Button>

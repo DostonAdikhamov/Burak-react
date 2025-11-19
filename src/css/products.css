@@ -5,7 +5,7 @@
   background: #f8f8ff;
 }
 
-.products .title-container {
+.products .container-title {
   margin-left: 450px;
   display: flex;
   flex-direction: row;
@@ -13,7 +13,7 @@
   margin-top: 83px;
 }
 
-.products .title-container .search-container {
+.products .container-title .search-box {
   margin-right: -75px;
 }
 
@@ -55,7 +55,7 @@
   text-align: left;
 }
 
-.products .search-container .search-button {
+.products .search-box .search-button {
   margin-left: -90px;
   width: 106px;
   height: 32px;
@@ -68,13 +68,13 @@
   gap: 20px;
 }
 
-.category-tabs {
+.menu-category {
   position: absolute;
   left: 450px;
   top: 240px;
 }
 
-.category-tabs button {
+.menu-category button {
   transform: rotate(-90deg);
   margin-top: 40px;
   margin-left: 10px;
