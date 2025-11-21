@@ -9,7 +9,7 @@ export default function ProductsPage() {
   const products = useRouteMatch();
   return <div className="products-page">
     <Switch>
-      <Route path={`${products.path}/productId`}>
+      <Route path={`${products.path}/:productId`}>
         <ChosenProduct />
       </Route>
        <Route path={`${products.path}`}>
