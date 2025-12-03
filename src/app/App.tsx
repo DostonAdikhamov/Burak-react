@@ -33,7 +33,6 @@ function App() {
             <HelpPage />
           </Route>
           <Route path="/">
-          <Test />
             <Home />
           </Route>
         </Switch>

@@ -17,8 +17,6 @@ export default function HomeNavbar() {
         };
     }, [value]);
 
-   
-
     /** HANDLERS **/
 
     const buttonHandler = () => {
