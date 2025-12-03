@@ -31,9 +31,8 @@ class Test extends React.Component {
       // runs before component unmount
   }
 
-  componentDidUpdate() {
-      
-  }
+  componentDidUpdate() {}
+  
 
   render() {
     return (
