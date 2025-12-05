@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Statistics from "./Statistics";
 import PopularDishes from "./PopularDishes";
 import NewDishes from "./NewDishes";
@@ -7,7 +7,15 @@ import Events from "./Events";
 import ActiveUsers from "./ActiveUsers";
 import "../../../css/home.css";
 
-export default function Home() {
+export default function Home() { 
+  // Selectors: Store => Data
+
+  useEffect(() => {
+    // Basckend Serverdan datani fetch qiladi => Data
+
+    // Slice: Data => Store
+  }, [])
+
   return <div className={"homepage"}>
     <Statistics />
     <PopularDishes />
