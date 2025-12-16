@@ -1,5 +1,5 @@
-import React, { SyntheticEvent, useState } from "react";
-import { Box, Container, Stack } from "@mui/material";
+import { Dispatch, SyntheticEvent, useState } from "react";
+import { Container, Box, Stack } from "@mui/material";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import TabContext from "@mui/lab/TabContext";
@@ -7,10 +7,23 @@ import LocationIcon from "@mui/icons-material/LocationOn";
 import PausedOrders from "./PausedOrders";
 import ProcessOrders from "./ProcessOrders";
 import FinishedOrders from "./FinishedOrders";
-import "../../../css/orders.css"
+import "../../../css/orders.css";
+import { setFinishedOrders, setPausedOrders, setProcessOrders } from "./slice";
+import { Order } from "../../../lib/types/orders";
+import { useDispatch } from "react-redux";
+
+/** REDUX SLICE & SELECTOR **/
+const actionDispatch = (dispatch: Dispatch) => ({
+  setPausedOrders: (data: Order[]) => dispatch(setPausedOrders(data)),
+  setProcessOrders: (data: Order[]) => dispatch(setProcessOrders(data)),
+  setFinishedOrders: (data: Order[]) => dispatch(setFinishedOrders(data)) 
+});
 
 export default function OrdersPage() {
+  const { setFinishedOrders, setPausedOrders, setProcessOrders } = actionDispatch(useDispatch())
   const [value, setValue] = useState("1");
+
+  /** HANDLERS **/
 
   const handleChange = (e: SyntheticEvent, newValue: string) => {
     setValue(newValue);
